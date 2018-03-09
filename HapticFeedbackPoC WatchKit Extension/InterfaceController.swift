@@ -26,5 +26,49 @@ class InterfaceController: WKInterfaceController {
         // This method is called when watch view controller is no longer visible
         super.didDeactivate()
     }
+    
+    func playHaptic(type: WKHapticType) {
+        WKInterfaceDevice.current().play(type)
+    }
 
+}
+
+extension InterfaceController {
+    
+    @IBAction func btnClick_Action() {
+        playHaptic(type: WKHapticType.click)
+    }
+    
+    @IBAction func btnNotification_Action() {
+        playHaptic(type: WKHapticType.notification)
+    }
+    
+    @IBAction func btnDirectionUp_Action() {
+        playHaptic(type: WKHapticType.directionUp)
+    }
+    
+    @IBAction func btnDirectionDown_Action() {
+        playHaptic(type: WKHapticType.directionDown)
+    }
+    
+    @IBAction func btnStart_Action() {
+        playHaptic(type: WKHapticType.start)
+    }
+    
+    @IBAction func btnStop_Action() {
+        playHaptic(type: WKHapticType.stop)
+    }
+    
+    @IBAction func btnRetry_Action() {
+        playHaptic(type: WKHapticType.retry)
+    }
+    
+    @IBAction func btnSuccess_Action() {
+        playHaptic(type: WKHapticType.success)
+    }
+    
+    @IBAction func btnFailure_Action() {
+        playHaptic(type: WKHapticType.failure)
+    }
+    
 }
